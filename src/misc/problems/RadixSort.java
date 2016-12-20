@@ -22,18 +22,34 @@ import java.util.Queue;
 public class RadixSort {
 
 	final static ArrayList<Queue<Integer>>arrayOfQueues = new ArrayList<Queue<Integer>>(10);
-	
+	private int maxPossibleRadix = Integer.MIN_VALUE;
 	public RadixSort() {
 		//Initialize the arraysOfQueue
 		for(int i = 0; i<10;i++) {
 			arrayOfQueues.add(new LinkedList<Integer>());
 		}
 	}
+	
+	private void setMaxPossibleRadix(ArrayList<Integer> arr) {
+		
+		for(int i: arr) {
+			int currentDecimal = 0;
+			while((float)i/10.0 > 0.0) {
+				i = i/10;
+				currentDecimal++;
+			}
+			
+			if(maxPossibleRadix < currentDecimal) {
+				maxPossibleRadix = currentDecimal;
+			}
+		}
+	}
+	
 	public ArrayList<Integer> sort(ArrayList<Integer>arr) {
 		
+		setMaxPossibleRadix(arr);
 		int radixIndex = 0;
-		boolean doAllNumbersHaveZeroRadix = false;
-		while(!doAllNumbersHaveZeroRadix) {
+		while(radixIndex < maxPossibleRadix) {
 			//Enqueue numbers into their queue at their calculated radix
 			for(int number:arr) {
 				
@@ -46,7 +62,6 @@ public class RadixSort {
 				radixQueue.add(number);
 			}
 			
-			doAllNumbersHaveZeroRadix = (arrayOfQueues.get(0) != null || !arrayOfQueues.get(0).isEmpty()) ? (arrayOfQueues.get(0).size() == arr.size()? true: false):false;
 			//DeQueue and update arr
 			int index = 0;
 			for(Queue<Integer> queue: arrayOfQueues) {
@@ -57,6 +72,7 @@ public class RadixSort {
 			}
 			
 			radixIndex++;
+			
 		}
 		return arr;
 	}
@@ -86,6 +102,7 @@ public class RadixSort {
 		radixSort.sort(arr);
 		if(initialSize == arr.size()){
 			System.out.println(arr.toString());
+			System.out.println(arr.size());
 		} else {
 			System.out.println("Different Size of elements returned");
 		}
