@@ -13,9 +13,16 @@ import java.util.Queue;
  * 
  * @author amishra
  *
- *<h1>Algorithm to sort elements using RadixSort logic<h1p>
- *<p>Space Complexity = O(n), Arrays of 10 queues, 1 for each radix, and a queue in each array position</p>
- *<p>Time Complexity = O(nk), where k is the maximum radix + 1 of all the numbers</p>
+ *<h1>Algorithm to sort elements using CountSort logic<h1p>
+ *<h3>Space Complexity = O(n), Arrays of 10 queues, 1 for each radix, and a queue in each array position</h3>
+ *<h3>Time Complexity = O(nk), where k is the maximum radix + 1 of all the numbers</h3>
+ *<p>Perform radix sort by maintaining a queue for every radix 0 to 9
+ *Then loop through all numbers and add them to their queues based on the
+ *value of their radix. Then DeQueue and add it back to the array.
+ *It would be sorted in the order of the radix used. 
+ *Repeat this for all radices from 0 to max possible radix.
+ *The array would be sorted because we have sorted the number with respect
+ *to each of their radix</p>
  *<p>Radix Sort would clearly be slow for numbers with large radix</p>
  *
  */
