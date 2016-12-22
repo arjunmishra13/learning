@@ -12,7 +12,7 @@ import java.util.Vector;
  * 
  * @author amishra
  *
- *<h1>Algorithm to sort elements using CountSort logic<h1p>
+ *<h1>Non-Comparison based algorithm to sort elements using CountSort logic<h1p>
  *<h3>Space Complexity = O(n), because we maintain an array that stores the count of each number, whose size is max of numbers</h3>
  *<h3>Time Complexity = O(n), because we iterate through the loop only once</h3>
  *<p>Perform count sort by iterating through the loop. The array we maintain, 
