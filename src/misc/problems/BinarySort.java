@@ -35,7 +35,6 @@ public class BinarySort {
 		return arr;
 	}
 	
-	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
