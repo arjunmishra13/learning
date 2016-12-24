@@ -18,6 +18,7 @@ import java.util.ArrayList;
  *<p>Non-optimal solution. We can do better</p>
  *
  */
+
 public class BinarySort {
 
 	

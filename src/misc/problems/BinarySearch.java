@@ -17,6 +17,7 @@ import java.util.Vector;
  *<h3>Time Complexity = O(log(n))</h3>
  *
  */
+
 public class BinarySearch {
 
 	
