@@ -48,9 +48,9 @@ public class BinarySearch {
 			arr.add(Integer.parseInt(line));
 			line = bufferedReader.readLine();
 		}
-		BinarySearch BinarySearch = new BinarySearch();
+		BinarySearch binarySearch = new BinarySearch();
 		System.out.println(arr.toString());
-		System.out.println(BinarySearch.find(arr, 0, arr.size() - 1, searchFor));
+		System.out.println(binarySearch.find(arr, 0, arr.size() - 1, searchFor));
 	}
 
 }
