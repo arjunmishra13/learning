@@ -18,24 +18,24 @@ import java.util.Vector;
  *
  */
 
-public class MergeSort {
+public class MergeSort<T> {
 
 	
-	public Vector<Integer> mergeSort(Vector<Integer>sortedArray, int start, int end) {
+	public static <T extends Number> Vector<T> mergeSort(Vector<T>sortedArray, int start, int end) {
 		if(start >= end) {
-			Vector<Integer> array = new Vector<Integer>();
+			Vector<T> array = new Vector<T>();
 			array.add(sortedArray.get(start));
 			return array;
 		}
 		int mid = start + (int)Math.floor((end - start)/2.0);
-		Vector<Integer>array1 = mergeSort(sortedArray, start, mid);
-		Vector<Integer>array2 = mergeSort(sortedArray, mid + 1, end);
+		Vector<T>array1 = mergeSort(sortedArray, start, mid);
+		Vector<T>array2 = mergeSort(sortedArray, mid + 1, end);
 		
 		return merge(array1, array2);
 	}
 	
-	private Vector<Integer> merge(Vector<Integer>array1, Vector<Integer>array2) {
-		Vector<Integer>mergedArray =  new Vector<Integer>();
+	private static <T extends Number> Vector<T> merge(Vector<T>array1, Vector<T>array2) {
+		Vector<T>mergedArray =  new Vector<T>();
 		
 		while(!array1.isEmpty() || !array2.isEmpty()) {
 			
@@ -45,7 +45,7 @@ public class MergeSort {
 			} else if(array2.isEmpty()) {
 				mergedArray.addAll(array1);
 				array1.clear();
-			} else if(array1.get(0) < array2.get(0)) {
+			} else if(array1.get(0).doubleValue() < array2.get(0).doubleValue()) {
 				mergedArray.add(array1.get(0));
 				array1.remove(0);
 			} else {
@@ -67,9 +67,8 @@ public class MergeSort {
 			arr.add(Integer.parseInt(line));
 			line = bufferedReader.readLine();
 		}
-		MergeSort mergeSort = new MergeSort();
 		System.out.println(arr.toString());
-		System.out.println(mergeSort.mergeSort(arr, 0, arr.size() - 1));
+		System.out.println(MergeSort.mergeSort(arr, 0, arr.size() - 1));
 	}
 
 }

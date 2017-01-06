@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Vector;
-
+import java.util.*;
 /**
  * Divide and conquer.
  * Return recursive solution
@@ -14,7 +13,7 @@ import java.util.Vector;
  */
 public class SelectionSort {
 	
-	public static Vector<Integer> sort(Vector<Integer>num, int start, int end, boolean isReverse) {
+	public static <T extends Number> Vector<T> sort(Vector<T>num, int start, int end, boolean isReverse) {
 		
 		if(num.isEmpty()) {
 			return null;
@@ -26,12 +25,12 @@ public class SelectionSort {
 		
 		int maxIndex = getMaxIndex(num,start, end);
 		if(isReverse) {
-			int temp = num.get(start);
+			T temp = num.get(start);
 			num.set(start, num.get(maxIndex));
 			num.set(maxIndex, temp);
 			start++;
 		} else {
-			int temp = num.get(end);
+			T temp = num.get(end);
 			num.set(end, num.get(maxIndex));
 			num.set(maxIndex, temp);
 			end--;
@@ -39,13 +38,13 @@ public class SelectionSort {
 		return sort(num, start, end, isReverse);
 	}
 	
-	private static int getMaxIndex(Vector<Integer>num, int start, int end) {
-		int max = Integer.MIN_VALUE;
-		int maxIndex = -1;
+	private static <T extends Number> int getMaxIndex(Vector<T>num, int start, int end) {
+		Double max = num.get(start).doubleValue();
+		int maxIndex = start;
 		for(int i = start; i<=end;i++){
 			
-			if(max < num.get(i)) {
-				max = num.get(i);
+			if(max < num.get(i).doubleValue()) {
+				max = num.get(i).doubleValue();
 				maxIndex = i;
 			}
 		}
