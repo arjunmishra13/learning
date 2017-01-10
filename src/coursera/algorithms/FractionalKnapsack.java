@@ -28,13 +28,13 @@ public class FractionalKnapsack <W extends Number, V extends Number> {
 	public FractionalKnapsack(W maxWeight, List<Item<W,V>>items) {
 		this.maxWeight = maxWeight; 
 		this.items = items;
+		Collections.sort(items, sortByDensity);
 	}
 	
 	public double getMaxValue() {
 		
 		double totalValue = 0.0;;
 		double weightCapacity = maxWeight.doubleValue();
-		Collections.sort(items, sortByDensity);
 
 		for(Item<W,V> it:items) {
 			
@@ -53,6 +53,25 @@ public class FractionalKnapsack <W extends Number, V extends Number> {
 		return totalValue;
 	}
 	
+	public double getMaxRecursive(List<Item<W,V>>items, double weightCapacity, double maxValue) {
+		
+		if(weightCapacity == 0) {
+			return maxValue;
+		}
+		
+		Item<W,V>item = items.remove(0);
+		if(item.weight.doubleValue() <= weightCapacity) {
+			maxValue += item.value.doubleValue();
+			weightCapacity -= item.weight.doubleValue();
+		} else {
+			double fractionalValue = (weightCapacity)*item.getDensity();
+			maxValue += fractionalValue;
+			weightCapacity = 0;
+		}
+		return getMaxRecursive(items, weightCapacity, maxValue);
+		
+	}
+	
 	public final Comparator<Item<W,V>> sortByDensity = new Comparator<Item<W,V>>() {
 
 		@Override
@@ -66,7 +85,7 @@ public class FractionalKnapsack <W extends Number, V extends Number> {
 	};
 	
 	public static void main(String[] args) throws IOException {
-		Integer maxWeight = 30;
+		Integer maxWeight = 25;
 		
 		String fileName = "/Users/mishra/Desktop/Projects/Test/Knapsack.txt";
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
@@ -85,5 +104,6 @@ public class FractionalKnapsack <W extends Number, V extends Number> {
 		FractionalKnapsack<Integer, Integer> fks = new FractionalKnapsack<Integer, Integer>(maxWeight, items);
 		System.out.println(items.toString());
 		System.out.println(fks.getMaxValue());
+		System.out.println(fks.getMaxRecursive(items, maxWeight, 0.0));
 	}
 }
