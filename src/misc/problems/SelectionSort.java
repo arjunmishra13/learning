@@ -63,6 +63,8 @@ public class SelectionSort {
 			line = bufferedReader.readLine();
 		}
 		
+		bufferedReader.close();
+		
 		System.out.println(SelectionSort.sort(arr, 0, arr.size()-1, false));
 		System.out.println(SelectionSort.sort(arr, 0, arr.size()-1, true));
 	}

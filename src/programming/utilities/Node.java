@@ -25,6 +25,10 @@ public class Node {
 		this.children = children;
 	}
 	
+	public void addChildren(Node n) {
+		children.add(n);
+	}
+	
 	public String toString() {
 		return Integer.toString(this.key);
 	}

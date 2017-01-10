@@ -202,7 +202,6 @@ public class PriorityQueue {
 		PriorityQueue priorityQueue = new PriorityQueue();
 		
 		String fileName = "/Users/mishra/Desktop/Projects/Test/SortNumbers.txt";
-		@SuppressWarnings("resource")
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
 		String line = bufferedReader.readLine();
 		Vector<Integer>arr = new Vector<Integer>();
@@ -211,6 +210,7 @@ public class PriorityQueue {
 			line = bufferedReader.readLine();
 		}
 		
+		bufferedReader.close();
 		//insert first 12 elements
 		for(int i = 0; i<12;i++) {
 			priorityQueue.insert(arr.get(i));
