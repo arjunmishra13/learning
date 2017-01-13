@@ -33,9 +33,7 @@ public class ChangeProblem {
 				}
 				
 			}
-			if(min > 0) {
-				minChange[c] = min;
-			}
+			minChange[c] = min;
 			
 		}
 		return minChange[change];
@@ -52,7 +50,7 @@ public class ChangeProblem {
 			arr.add(Integer.parseInt(line));
 			line = bufferedReader.readLine();
 		}
-		int change = 79;
+		int change = 60;
 		System.out.println("Change\t" + change + "\t" + arr);
 		System.out.println(ChangeProblem.getMinimumChange(change, arr));
 	}
