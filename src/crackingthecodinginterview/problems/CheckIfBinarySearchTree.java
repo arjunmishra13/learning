@@ -10,14 +10,14 @@ public class CheckIfBinarySearchTree {
 			return true;
 		}
 		Integer leftMax = getMax(node.getLeftChild(), null);
-		Integer rightMax = getMin(node.getRightChild(), null);
+		Integer rightMin = getMin(node.getRightChild(), null);
 		
 		boolean isSearch = true;
 		if(leftMax != null && leftMax <= node.getKey()) {
 			isSearch = isSearch && isBinarySearchTree(node.getLeftChild());
 		}
 		
-		if(rightMax != null && rightMax > node.getKey()) {
+		if(rightMin != null && rightMin > node.getKey()) {
 			isSearch = isSearch && isBinarySearchTree(node.getRightChild());
 		}
 		
