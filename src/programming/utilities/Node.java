@@ -12,6 +12,11 @@ public class Node {
 		this.children = new LinkedList<Node>();
 	}
 	
+	public Node(int key) {
+		this();
+		this.key = key;
+	}
+	
 	public int getKey() {
 		return key;
 	}

@@ -3,6 +3,11 @@ package crackingthecodinginterview.problems;
 import java.util.Iterator;
 import java.util.Stack;
 
+/**
+ * Prooblem 3.5
+ * @author mishra
+ *
+ */
 public class MyQueue {
 
 	Stack<Integer>stack1;

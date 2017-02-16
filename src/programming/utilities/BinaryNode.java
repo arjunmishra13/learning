@@ -9,6 +9,10 @@ public class BinaryNode extends Node{
 		getChildren().add(null);
 	}
 	
+	public BinaryNode(int key) {
+		this();
+		this.setKey(key);
+	}
 	public BinaryNode getLeftChild() {
 		return (BinaryNode)getChildren().get(0);
 	}
@@ -25,4 +29,12 @@ public class BinaryNode extends Node{
 		getChildren().set(1, right);
 	}
 
+	public static void getInOrder(BinaryNode node) {
+		if(node == null) {
+			return;
+		}
+		getInOrder(node.getLeftChild());
+		System.out.println(node.getKey());
+		getInOrder(node.getRightChild());
+	}
 }
