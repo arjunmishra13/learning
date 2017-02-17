@@ -13,17 +13,25 @@ public class CheckIfBinarySearchTree {
 		Integer rightMin = getMin(node.getRightChild(), null);
 		
 		boolean isSearch = true;
-		if(leftMax != null && leftMax <= node.getKey()) {
-			isSearch = isSearch && isBinarySearchTree(node.getLeftChild());
+		if(leftMax != null) {
+			if(leftMax <= node.getKey()) {
+				isSearch = isSearch && isBinarySearchTree(node.getLeftChild());
+			} else {
+				isSearch = false;
+			}
 		}
 		
-		if(rightMin != null && rightMin > node.getKey()) {
-			isSearch = isSearch && isBinarySearchTree(node.getRightChild());
+		if(rightMin != null) {
+			if(rightMin > node.getKey()) {
+				isSearch = isSearch && isBinarySearchTree(node.getRightChild());
+			} else {
+				isSearch = false;
+			}
 		}
 		
 		return isSearch;
 	}
-	private static int getMax(BinaryNode node, Integer max) {
+	private static Integer getMax(BinaryNode node, Integer max) {
 		
 		if(node == null) {
 			return max;
@@ -39,7 +47,7 @@ public class CheckIfBinarySearchTree {
 		return max;
 	}
 
-	private static int getMin(BinaryNode node, Integer min) {
+	private static Integer getMin(BinaryNode node, Integer min) {
 		
 		if(node == null) {
 			return min;
@@ -56,7 +64,25 @@ public class CheckIfBinarySearchTree {
 	}
 	public static void main(String[] args) {
 
-		BinaryNode node = new BinaryNode();
-		System.out.println(isBinarySearchTree(node));
+		BinaryNode node1 = new BinaryNode(1);
+		BinaryNode node2 = new BinaryNode(2);
+		BinaryNode node3 = new BinaryNode(3);
+		BinaryNode node4 = new BinaryNode(4);
+		BinaryNode node5 = new BinaryNode(5);
+		BinaryNode node6 = new BinaryNode(6);
+		BinaryNode node7 = new BinaryNode(7);
+		BinaryNode node8 = new BinaryNode(8);
+		BinaryNode node9 = new BinaryNode(9);
+		
+		node1.setRightChild(node2);
+		node2.setRightChild(node3);
+		node3.setRightChild(node4);
+		node4.setRightChild(node5);
+		node5.setRightChild(node6);
+		node6.setRightChild(node7);
+		node7.setRightChild(node8);
+		node8.setRightChild(node9);
+		node1.setRightChild(node2);
+		System.out.println(isBinarySearchTree(node1));
 	}
 }
