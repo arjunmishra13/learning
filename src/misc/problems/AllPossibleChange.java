@@ -7,6 +7,11 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.Vector;
 
+/**
+ * TODO - Need to find a more optimal solution
+ * @author mishra
+ *
+ */
 public class AllPossibleChange {
 
     public static int getPossibleCombinations(int sum, int[]arr) {
