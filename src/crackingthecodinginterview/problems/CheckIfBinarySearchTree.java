@@ -2,9 +2,74 @@ package crackingthecodinginterview.problems;
 
 import programming.utilities.BinaryNode;
 
+/**
+ * Problem 4.5
+ * Solution
+ * 1. In order traversale. Compare value with immediate last
+ * 2. Find min max at each in order traversal. Updating the values as you descend
+ * @author mishra
+ *
+ */
 public class CheckIfBinarySearchTree {
-
-	private static boolean isBinarySearchTree(BinaryNode node) {
+	
+	/*
+	 * Min Max at each node is updated.
+	 * Start with null null
+	 * As you go left, your max is current, min stays same
+	 * As you go right, you min is current, max stays same
+	 */
+	public static boolean isBinarySearchTree(BinaryNode node, Integer min, Integer max) {
+		
+		if(node == null) {
+			return true;
+		}
+		
+		if( (min != null && min > node.getKey()) || (max != null && max <= node.getKey()) ) {
+			return false;
+		}
+		
+		if(!isBinarySearchTree(node.getLeftChild(), min, node.getKey()) ||
+				!isBinarySearchTree(node.getRightChild(), node.getKey(), max)) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	/*
+	 * Using last seen from in order traversal
+	 * to compare. The next node seen,
+	 * should always be greater than last node
+	 * NOTE: Only works for non repeated values
+	 */
+	private static BinaryNode last = null;
+	public static boolean isBinarySearchTreeByComparisonWithLast(BinaryNode node) {
+		
+		if(node == null) {
+			return true;
+		}
+		
+		if(!isBinarySearchTreeByComparisonWithLast(node.getLeftChild())) {
+			return false;
+		}
+		
+		if( last !=null && node.getKey() < last.getKey()) {
+			return false;
+		}
+		last = node;
+		
+		if( !isBinarySearchTreeByComparisonWithLast(node.getRightChild())) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	/*
+	 * I can do better
+	 */
+	@Deprecated
+	public static boolean isBinarySearchTree(BinaryNode node) {
 		
 		if(node == null) {
 			return true;
@@ -31,6 +96,7 @@ public class CheckIfBinarySearchTree {
 		
 		return isSearch;
 	}
+	@Deprecated
 	private static Integer getMax(BinaryNode node, Integer max) {
 		
 		if(node == null) {
@@ -47,6 +113,7 @@ public class CheckIfBinarySearchTree {
 		return max;
 	}
 
+	@Deprecated
 	private static Integer getMin(BinaryNode node, Integer min) {
 		
 		if(node == null) {
@@ -83,6 +150,7 @@ public class CheckIfBinarySearchTree {
 		node7.setRightChild(node8);
 		node8.setRightChild(node9);
 		node1.setRightChild(node2);
-		System.out.println(isBinarySearchTree(node1));
+		System.out.println(isBinarySearchTreeByComparisonWithLast(node1));
+		System.out.println(isBinarySearchTree(node1, null, null));
 	}
 }
