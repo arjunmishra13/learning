@@ -8,10 +8,15 @@ import java.util.regex.*;
 
 public class BigSort {
 
+	public static boolean IS_SORTED = false;
 	//Use pivot sort
     public static void sort(String[]arr, int start, int end) {
         
     	if(start > end) {
+    		return;
+    	}
+
+    	if(IS_SORTED || isSorted(arr)) {
     		return;
     	}
     	
@@ -40,6 +45,15 @@ public class BigSort {
     	sort(arr, pivot + 1, end);
     }
     
+    private static boolean isSorted(String[]arr) {
+    	for(int i = 0; i < arr.length - 1; i++) {
+    		if(isLesser(arr[i+1], arr[i])) {
+    			return false;
+    		}
+    	}
+    	IS_SORTED = true;
+    	return IS_SORTED;
+    }
     private static boolean isLesser(String str1, String str2) {
     	
     	BigInteger b1 = new BigInteger(str1);

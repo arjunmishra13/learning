@@ -77,7 +77,7 @@ public class DayOfTheProgrammer {
     
     private static boolean isLeapYear(int year, Style style) {
     	if(style == Style.GREGORIAN) {
-    		return (year%400 == 0 || (year%400 != 0 && year%4 == 0));
+    		return (year%400 == 0 || (year%4 == 0 && year%100 != 0));
     	} else if(style == Style.JULIAN) {
     		return year%4 == 0;
     	} 
