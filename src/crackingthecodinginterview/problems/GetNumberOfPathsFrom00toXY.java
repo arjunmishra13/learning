@@ -46,7 +46,6 @@ public class GetNumberOfPathsFrom00toXY {
 		if(x == 0 && y == 0) {
 			pos.add(new Position(0,0));
 			allPositions.add(pos);
-			pos = new LinkedList<Position>();
 			return;
 		}
 		
@@ -94,8 +93,8 @@ public class GetNumberOfPathsFrom00toXY {
 	}
 
 	public static void main(String[] args) {
-		int x = 6;
-		int y = 6;
+		int x = 3;
+		int y = 2;
 		
 		GetNumberOfPathsFrom00toXY pathsObj = new GetNumberOfPathsFrom00toXY(x,y);
 		List<Position>unAvailablePoints = new LinkedList<Position>();
