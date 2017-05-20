@@ -8,11 +8,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class CountSort {
+/**
+ * STAR STAR START algorithm
+ * @author mishra
+ *
+ */
+public class CountSortBetter {
 
 	Vector<Integer>countArray; //Use a dynamic array because we don't know the size initially
 	
-	public static ArrayList<Integer> sort(ArrayList<Integer>arr) {
+	public static int[] sort(ArrayList<Integer>arr) {
+		int[]output = new int[arr.size()];
 		//Initialize countArray
 		int max = Integer.MIN_VALUE;
 		for(int number: arr) {
@@ -28,23 +34,27 @@ public class CountSort {
 			countArray[number] = countArray[number] + 1;
 		}
 		
-		int index = 0;
-		for(int i = 0; i < countArray.length; i++) {
-			int count = countArray[i];
-			while(count != 0) {
-				arr.set(index,i);
-				index++;
-				count--;
-			}
+		//Now the count array will have last + 1 occurrence index of each character 
+		for(int i = 1; i <= max; i++) {
+			countArray[i] = countArray[i] + countArray[i - 1];
+ 		}
+		/*
+		 * Use the original set again to update the output array
+		 * Each value in the original array get the index  
+		 */
+		for(int val: arr) {
+			int index = countArray[val] - 1;
+			output[index] = val;
+			countArray[val] = index;
 		}
-		return arr;
+		return output;
 	}
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
 		ArrayList<Integer>arr = new ArrayList<Integer>();
-		String fileName = "/Users/amishra/Desktop/Projects/Test/SortNumbers.txt";
+		String fileName = "/Users/mishra/Desktop/Projects/Test/SortNumbers.txt";
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
 		String line = bufferedReader.readLine();
 		
@@ -53,10 +63,13 @@ public class CountSort {
 			line = bufferedReader.readLine();
 		}
 		int initialSize = arr.size();
-		CountSort.sort(arr);
-		if(initialSize == arr.size()){
-			System.out.println(arr.toString());
-			System.out.println(arr.size());
+		int[]out = CountSortBetter.sort(arr);
+		if(initialSize == out.length){
+			for(int a: out) {
+				System.out.print(a + " ");
+			}
+			System.out.println();
+			System.out.println(out.length);
 		} else {
 			System.out.println("Different Size of elements returned");
 		}
