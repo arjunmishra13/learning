@@ -2,7 +2,7 @@ package coursera.algorithms;
 
 import java.util.Vector;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Using greedy algorithms

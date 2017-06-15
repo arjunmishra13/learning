@@ -50,11 +50,10 @@ public class CountSortBetter {
 		return output;
 	}
 	
-	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
 		ArrayList<Integer>arr = new ArrayList<Integer>();
-		String fileName = "/Users/mishra/Desktop/Projects/Test/SortNumbers.txt";
+		String fileName = "/Users/amishra/Documents/Projects/TestFiles/SortNumbers.txt";
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
 		String line = bufferedReader.readLine();
 		
