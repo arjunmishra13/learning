@@ -22,7 +22,7 @@ public class CountSort {
 		}
 		
 		System.out.println(String.format("Max is [%d]. Creating an array of that size", max));
-		
+
 		int[]countArray = new int[max + 1];
 		for(int number: arr) {
 			countArray[number] = countArray[number] + 1;
