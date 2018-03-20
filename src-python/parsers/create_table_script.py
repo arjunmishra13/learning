@@ -6,5 +6,5 @@ def createTable(numberOfTables):
 
 
 if __name__ == "__main__": 
-	numberOfTables = 1000000
+	numberOfTables = 10000
 	createTable(numberOfTables)

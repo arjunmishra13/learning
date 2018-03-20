@@ -7,7 +7,7 @@ import os
 # dirname - location of log file
 # level - level you want to analyze
 # log_length - length you want to strip. if it is -1, use the entire length
-def parseFile(dirname, level, log_length):
+def parseFile(dirname, filename, level, log_length):
 
   print_level = -1
   if level == "TRACE":
@@ -25,12 +25,27 @@ def parseFile(dirname, level, log_length):
     return
 
   log_dict = dict()
-  for filename in os.listdir(dirname):
-    if ".out" not in filename:
-      continue
-    filename = dirname + "/" + filename
-    print "Looking in file\t" + filename
+  if len(filename) == 0:
+    for filename in os.listdir(dirname):
+      if ".out" not in filename:
+        continue
+      filename = dirname + "/" + filename
+      print "Looking in file\t" + filename
 
+      file = open(filename, 'r')
+      for f in file:
+        f = re.sub(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3} ', '', f)
+        if get_level(f) >= print_level:
+          if log_length > 0 and log_length < len(f):
+            f = f[:log_length]
+          else:
+            f = f[:len(f) - 1]
+          if f not in log_dict:
+            log_dict[f] = 0
+
+          log_dict[f] = log_dict.get(f) + 1
+  else:
+    filename = dirname + '/' + filename
     file = open(filename, 'r')
     for f in file:
       f = re.sub(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3} ', '', f)
@@ -43,6 +58,7 @@ def parseFile(dirname, level, log_length):
           log_dict[f] = 0
 
         log_dict[f] = log_dict.get(f) + 1
+
 
   outfile = open(dirname + "/unique_log_analyzer.log", 'w')
 
@@ -66,6 +82,10 @@ def get_level(f):
 
 if __name__ == "__main__":
   level = raw_input("Log Level: TRACE, DEBUG, INFO, WARN, or ERROR:\t").strip()
-  dirname = raw_input("Log path directory:\t").strip()
+  # dirname = raw_input("Log path directory:\t").strip()
+  dirname = "/Users/amishra/Documents/Cloudera/Support/CDH-64384/dumps/01-26-2018/hive_d01262018/logs"
+  # filename = raw_input("Log path filename:\t").strip()
+  # filename = "sentry-SENTRY_SERVER-f524c6d0207e243f10fd95d0b23f5a4a.log"
+  filename = ""
   log_length = int(raw_input("Sepcify length you want to filter by. Set -1 if you don't want to specify length\t"))
-  parseFile(dirname, level, log_length)
+  parseFile(dirname, filename, level, log_length)

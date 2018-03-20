@@ -1,8 +1,8 @@
 def createRole(numberOfRoles):
 	f = open('/Users/amishra/Scripts/output/createRolesOutput.txt', 'w')
 	for i in range(numberOfRoles):
-		f.write(("CREATE ROLE r{};\n").format(i))
-		f.write(("GRANT ROLE r{} TO GROUP arjun;\n").format(i))
+		f.write(("CREATE ROLE role{};\n").format(i))
+		f.write(("GRANT ROLE role{} TO GROUP hive;\n").format(i))
 	f.close()
 
 
