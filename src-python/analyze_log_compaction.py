@@ -1,3 +1,4 @@
+import operator
 from datetime import datetime
 
 def analyzeLogCompaction(fileName):
@@ -7,6 +8,7 @@ def analyzeLogCompaction(fileName):
   occurrenceCount = 0
   countPerDay = 0
   currentDate = datetime.now().date()
+  initialString = ""
   for data in f:
     try:
       if currentDate != getDateTime(data[:23]).date():
@@ -16,15 +18,36 @@ def analyzeLogCompaction(fileName):
         countPerDay = 0
 
       if "UpdateLog Reached Overflow Size" in data:
+        initialString = data
         startTime = getDateTime(data[:23])
         countPerDay = countPerDay + 1
       elif "UpdateLog Overflow, Compacting Done" in data:
         endTime = getDateTime(data[:23])
         durationMap[occurrenceCount] = (endTime - startTime).total_seconds()
         occurrenceCount = occurrenceCount + 1
+        finalString = data
+        if (endTime - startTime).total_seconds() > 20:
+          print '{}{}'.format(initialString, data)
     except:
       pass
 
+  f.close()
+  printTop10(durationMap)
+  printDayCounts(countPerDayMap)
+  printCompactionStats(durationMap)
+
+
+def printTop10(durationMap):
+  count = 0
+  for k, v in sorted(durationMap.items(), key=operator.itemgetter(1),
+                     reverse=True):
+    print v
+    count = count + 1
+    if count > 10:
+      break
+
+
+def printCompactionStats(durationMap):
   max = 0
   sum = 0
   count = 0
@@ -33,12 +56,7 @@ def analyzeLogCompaction(fileName):
       max = i
     sum = sum + i
     count = count + 1
-
-  print 'max\t{:.2f}, average\t{:.2f}'.format(max, (sum/count))
-
-
-  printDayCounts(countPerDayMap)
-  f.close()
+  print 'max\t{:.2f}, average\t{:.2f}'.format(max, (sum / count))
 
 
 def printDayCounts(countPerDayMap):
