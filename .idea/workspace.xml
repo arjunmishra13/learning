@@ -2,115 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8735e5b5-dc31-4787-89e3-a31ea8182c3e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src-python/parsers/add_user_group.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_columns_needed_authorization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_hms_perf_logs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-python/parsers/loganalysis/parameter_review.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-python/scriptgenerators/generate_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-python/scriptgenerators/generate_drop_roles_script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/misc/problems/TestStringFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/CarFuelingProblem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/ChangeProblem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/Fibonacci.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/FractionalKnapsack$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/FractionalKnapsack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/GCD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/Knapsack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/MaximumPairwiseProduct.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/OrganizingChildren$Group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/OrganizingChildren.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/ParenthesisProblem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/algorithms/SortDecreasingOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/datastructures/DisjointSets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/datastructures/PriorityQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/coursera/datastructures/Queue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/BinaryTreeBalanced.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/CheckCircularLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/CheckForPathInDirectedGraph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/CheckIfAStringIsAPerumtationOfAnother.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/CheckIfBinarySearchTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/CheckIfCharactersRepeatInAString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/ConvertSortedArrayIntoBalancedBinarySerachTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/CreateALinkedListOfAllNodesAtEachDepth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/DeleteMiddleElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FindKthNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FindKthToLastElementSinglyLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FindNextNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FindPathOFSum$Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FindPathOFSum$Path.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FindPathOFSum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/FirstCommonAncestorOfTwoNodes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/GetAllSubsets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/GetNumberOfPathsFrom00toXY$Position.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/GetNumberOfPathsFrom00toXY.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/IfOneElementZeroAllRowColumnZero.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/IsRotationASubString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/IsSubtree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/ListAPalindrome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/MagicIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/MinStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/MyQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/NumberOfPossibleWaysToClimbStairs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/PartionListAroundValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/PermutationsOfString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/RemoveDuplicatesFromUnsortedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/ReplaceSpaceByString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/RotateMatrixBy90dDegrees.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/SortStackInAscendingOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/StringCompression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/SumTwoNumbersRepresentedByLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/crackingthecodinginterview/problems/UseSingleArrayToImplementThreeStacks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/leetcode/problems/AddTwoNmbers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/leetcode/problems/ListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/concepts/SetListMemoryComparison.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/AllPossibleChange.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/BigSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/BinarySearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/BinarySort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/CheckPrimality.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/CountSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/CountSortBetter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/DayOfTheProgrammer$Style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/DayOfTheProgrammer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/FindPermutations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/HourGlassSum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/InsertionSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/IntegerStream.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/Knapsack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/LeftRotations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/MeanMedianMode$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/MeanMedianMode$Statistics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/MeanMedianMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/MergeSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/NumberOfCamelCaseWords.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/NumberOfConsecutiveOnes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/NumberOfPairs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/NumbersWithNonRepeatedDigits.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/PrintACount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/QuickSortInsertionSortTimeComparison.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/RadixSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/RecursiveSolution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/RegExPracticeHackerRank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/SelectionSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/SumProbability.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/SuperReducedString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/TowerOfHanoi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/TraverseBinaryTrees.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/misc/problems/ZigZagTreeTraversals.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/BinaryNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/BinaryNodeWithParent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/DoublyListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/InOrderTreeTraversal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/LevelFirstTraversal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/PostOrderTraversal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/PreOrderTraversal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/SinglyListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/TreeTraversal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/problemsolving/programming/utilities/TreeTraversalFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,47 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="generate_insert_into_roles_script.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py">
+      <file leaf-file-name="create_large_table.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="473">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analyze_columns_needed_authorization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_columns_needed_authorization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generate_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="generate_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analyze_hms_perf_logs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_hms_perf_logs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_user_group.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src-python/parsers/add_user_group.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            <state relative-caret-position="448">
+              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -185,6 +50,7 @@
       <find>sort</find>
       <find>test_rip_db_prtfl_aluation_bl3</find>
       <find>assay_protocol_id</find>
+      <find>error</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -236,6 +102,7 @@
         <option value="$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py" />
         <option value="$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_columns_needed_authorization.py" />
         <option value="$PROJECT_DIR$/src-python/scriptgenerators/generate_data.py" />
+        <option value="$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py" />
       </list>
     </option>
   </component>
@@ -272,6 +139,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane">
         <subPane>
@@ -289,7 +157,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.generate_data">
+  <component name="RunManager" selected="Python.create_large_table">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -398,6 +265,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="create_large_table" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="problemsolving" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src-python/scriptgenerators" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="generate_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problemsolving" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -429,24 +314,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="parameter_review" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="problemsolving" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src-python/parsers/loganalysis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src-python/parsers/loganalysis/parameter_review.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -594,18 +461,18 @@
     <list>
       <item itemvalue="Application.CountSortBetter" />
       <item itemvalue="Python.generate_insert_into_roles_script" />
-      <item itemvalue="Python.parameter_review" />
       <item itemvalue="Python.add_user_group" />
       <item itemvalue="Python.analyze_columns_needed_authorization" />
       <item itemvalue="Python.generate_data" />
+      <item itemvalue="Python.create_large_table" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.create_large_table" />
         <item itemvalue="Python.generate_data" />
         <item itemvalue="Python.analyze_columns_needed_authorization" />
         <item itemvalue="Python.generate_insert_into_roles_script" />
         <item itemvalue="Python.add_user_group" />
-        <item itemvalue="Python.parameter_review" />
       </list>
     </recent_temporary>
   </component>
@@ -623,7 +490,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1875" y="195" width="1649" height="978" extended-state="1" />
+    <frame x="2069" y="275" width="1649" height="978" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -638,12 +505,13 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24268824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24579963" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3280363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.368899" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.368899" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="9" />
@@ -654,7 +522,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3280363" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -683,6 +550,11 @@
           <line>18</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -691,7 +563,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="50" />
+      <option name="time" value="54" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -708,6 +580,41 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_columns_needed_authorization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_hms_perf_logs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/parsers/add_user_group.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -814,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_hms_perf_logs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -842,6 +742,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_drop_roles_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_insert_into_roles_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/analyze_log_compaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-python/check_consecutive_messages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src-python/parsers/loganalysis/analyze_columns_needed_authorization.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -849,17 +779,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_drop_roles_script.py">
+    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-end-line="26" selection-end-column="60" />
+        <state relative-caret-position="448">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/generate_data.py">
+    <entry file="file://$PROJECT_DIR$/src-python/scriptgenerators/create_large_table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="473">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
