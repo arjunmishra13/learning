@@ -83,7 +83,7 @@ def get_level(f):
 if __name__ == "__main__":
   level = raw_input("Log Level: TRACE, DEBUG, INFO, WARN, or ERROR:\t").strip()
   # dirname = raw_input("Log path directory:\t").strip()
-  dirname = "/Users/amishra/Documents/Cloudera/Support/CDH-64384/dumps/01-26-2018/hive_d01262018/logs"
+  dirname = "/Users/amishra/Documents/Cloudera/Support/CDH-78437"
   # filename = raw_input("Log path filename:\t").strip()
   # filename = "sentry-SENTRY_SERVER-f524c6d0207e243f10fd95d0b23f5a4a.log"
   filename = ""

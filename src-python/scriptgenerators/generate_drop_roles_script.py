@@ -10,7 +10,7 @@ def generate_drop_roles(number_of_roles, group_id, outputfile):
 
   insert_role_group = "DELETE FROM SENTRY_ROLE_GROUP_MAP WHERE ROLE_ID = "
   insert_role = "DELETE FROM SENTRY_ROLE WHERE ROLE_ID = "
-  for i in range(100, number_of_roles):
+  for i in range(10, number_of_roles):
 
     add_insert_role_group = insert_role_group + str(i) + ";\n"
     add_insert_role = insert_role + str(i) + ";\n"
