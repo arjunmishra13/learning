@@ -35,17 +35,15 @@ public class Knapsack {
 	}
 	
 	/*
-	 * Trick is to check for every first i items get the max value to reach maxWeight
-	 * This is done by using a 2D array of maxValue to get to the weigh w, with first i items
-	 * Iterate through all values, return the last iteration
+	 * Trick is to check for first element all max values, then first 2, then first 3, and so on till all are considered
 	 */
 	public static int getMaxValueWithoutRepetitions(int maxWeight, List<Item<Integer, Integer>> items) {
 		int[][]valueArray = new int[maxWeight+1][items.size()];
 		for(int n = 0; n< items.size(); n++) {
 			for(int w = 1; w<= maxWeight; w++) {
-				valueArray[w][n] = n > 0? valueArray[w][n - 1]: 0;
+				valueArray[w][n] = n > 1? valueArray[w][n - 1]: 0;
 				if(items.get(n).weight <= w) {
-					int newValue = (n > 0?valueArray[w - items.get(n).weight][n - 1]:0) + items.get(n).value;
+					int newValue = (n > 1?valueArray[w - items.get(n).weight][n - 1]:0) + items.get(n).value;
 					if(newValue > valueArray[w][n]) {
 						valueArray[w][n] = newValue;
 					}

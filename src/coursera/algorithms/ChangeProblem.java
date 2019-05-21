@@ -16,42 +16,38 @@ import java.util.Vector;
  *
  */
 public class ChangeProblem {
-	
-	public static int getMinimumChange(int change, Vector<Integer>coins) {
-		int[]minChange = new int[change + 1];
-		//Find min coins for each step 
-		for(int c = 1; c <= change; c++) {
-			int min = 0;
-			for(int denomination:coins) {
-				//1 coin for using this denomination + number of coins that were used in c - denominations
-				int previosMinPosition = c - denomination;
-				if(previosMinPosition >= 0) {
-					int numCoinsNeededWithThisDenomination = minChange[previosMinPosition] + 1;
-					if(min == 0 || min > numCoinsNeededWithThisDenomination) {
-						min = numCoinsNeededWithThisDenomination;
-					}
-				}
-				
-			}
-			minChange[c] = min;
-			
+
+	//Dynamic programming - fill up min coins to get to each int up to target
+	public int minNumberOfCoins(int target, int[]arr) {
+		int []targetArr = new int[target + 1];
+		for(int i = 1; i < targetArr.length; i++) {
+			targetArr[i] = nextMin(targetArr, arr, i);
+			System.out.print(targetArr[i] + ",");
 		}
-		return minChange[change];
+		System.out.println();
+		return targetArr[target];
+	}
+
+	private int nextMin(int[]target, int[]arr, int index) {
+		boolean isSet = false;
+		int min = Integer.MAX_VALUE;
+		for(int a:arr) {
+
+			if (index - a >= 0 && target[index-a] != -1) {
+				int val = target[index-a] + 1;
+				if (min > val) {
+					min = val;
+					isSet = true;
+				}
+			}
+		}
+		return isSet?min:-1;
 	}
 
 	@SuppressWarnings("resource")
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-		
-		Vector<Integer>arr = new Vector<Integer>();
-		String fileName = "/Users/mishra/Desktop/Projects/Test/PossibleChange.txt";
-		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
-		String line = bufferedReader.readLine();
-		while(line != null) {
-			arr.add(Integer.parseInt(line));
-			line = bufferedReader.readLine();
-		}
-		int change = 60;
-		System.out.println("Change\t" + change + "\t" + arr);
-		System.out.println(ChangeProblem.getMinimumChange(change, arr));
+	public static void main(String[] args) {
+		int[]arr = {2,5,7};
+		int change = 10;
+		System.out.println((new ChangeProblem()).minNumberOfCoins(change, arr));
 	}
 }

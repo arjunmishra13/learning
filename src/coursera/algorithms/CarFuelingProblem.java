@@ -45,6 +45,7 @@ public class CarFuelingProblem {
 		int maxDistanceBeforeEmpty = 200;
 		car.findTheStops(stops,maxDistanceBeforeEmpty);
 		System.out.println(car.refuelingPoints);
+		System.out.println(car.refuelingPoints.size());
 	}
 
 }

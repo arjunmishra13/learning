@@ -56,7 +56,7 @@ def create_large_table(db_name, table_name, number_of_columns, number_of_partiti
 if __name__ == "__main__":
   db_name = "dbx"
   table_name = "tblz"
-  number_of_columns = 5
-  number_of_partitions = 10000
-  outputfile = "/Users/amishra/Documents/Cloudera/TestFiles/GenerateDataScripts/large_table.txt"
+  number_of_columns = 20
+  number_of_partitions = 0
+  outputfile = "/Users/amishra/Scripts/output/large_table.txt"
   create_large_table(db_name, table_name, number_of_columns, number_of_partitions, outputfile)

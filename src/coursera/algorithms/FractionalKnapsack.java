@@ -87,7 +87,7 @@ public class FractionalKnapsack <W extends Number, V extends Number> {
 	public static void main(String[] args) throws IOException {
 		Integer maxWeight = 25;
 		
-		String fileName = "/Users/mishra/Desktop/Projects/Test/Knapsack.txt";
+		String fileName = "/Users/amishra/Scripts/input/knapsack.txt";
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
 		String line = bufferedReader.readLine();
 		List<Item<Integer, Integer>>items = new LinkedList<Item<Integer, Integer>>();
@@ -104,6 +104,6 @@ public class FractionalKnapsack <W extends Number, V extends Number> {
 		FractionalKnapsack<Integer, Integer> fks = new FractionalKnapsack<Integer, Integer>(maxWeight, items);
 		System.out.println(items.toString());
 		System.out.println(fks.getMaxValue());
-		System.out.println(fks.getMaxRecursive(items, maxWeight, 0.0));
+//		System.out.println(fks.getMaxRecursive(items, maxWeight, 0.0));
 	}
 }

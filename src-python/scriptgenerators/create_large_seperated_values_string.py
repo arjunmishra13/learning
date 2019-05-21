@@ -25,9 +25,9 @@ def create_large_seperated_values(num_values, val_str_prefix, val_str_suffix, se
   outputF.close();
 
 if __name__ == "__main__":
-  num_values = 1800
+  num_values = 100
   val_str_prefix = "col"
   val_str_suffix = ""
   seperator = ","
-  outputfile = "/Users/amishra/Documents/Cloudera/TestFiles/GenerateDataScripts/large_seperated_values.txt"
+  outputfile = "/Users/amishra/Scripts/output/large_table.txt"
   create_large_seperated_values(num_values, val_str_prefix, val_str_suffix, seperator, outputfile)
