@@ -1,36 +1,46 @@
 package coursera.algorithms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 public class Temp {
 
 
-  public static class TreeNode {
-
-    private int key;
-    ArrayList<TreeNode>children;
-
-    public TreeNode (int key) {
-      this.key = key;
-      children = new ArrayList<TreeNode>();
+  static class TreeNode {
+    int data;
+    TreeNode left;
+    TreeNode right;
+    TreeNode next;
+    TreeNode bottom;
+    public TreeNode(){};
+    public TreeNode(int data) {
+      this.data = data;
     }
 
-    public int getKey() {
-      return key;
-    }
-    public List<TreeNode> getChildren() {
-      return children;
-    }
-    public void addChildren(TreeNode n) {
-      children.add(n);
-    }
     @Override
     public String toString() {
-      return Integer.toString(key);
+      return Integer.toString(data);
     }
 
+    public static void preprintelements(TreeNode n) {
+      if (n == null) {
+        return;
+      }
+
+      System.out.print(n.data + ",");
+      preprintelements(n.left);
+      preprintelements(n.right);
+    }
   }
 
   static class Node {
@@ -60,85 +70,117 @@ public class Temp {
     }
   }
 
-  public static int numIslands(char[][] grid) {
-    boolean[][]visited = new boolean[grid.length][grid[0].length];
-    int c = 0;
-    int[][]check = {{-1,0},{0,-1},{0,1},{1,0}};
-    for (int i = 0; i < grid.length; i++) {
-      for (int j = 0; j < grid[0].length; j++) {
-        if (!visited[i][j] && grid[i][j] != 0) {
-          explore(grid, i, j, visited, check);
-          c++;
-        }
-      }
+  static class ListNode {
+    int val;
+    ListNode next;
+    public ListNode(int val) {
+      this.val = val;
     }
 
-    return c;
+    @Override
+    public String toString() {
+      return val + "";
+    }
   }
 
-  private static void explore(char[][]grid, int i, int j, boolean[][]visited, int[][]check) {
-    visited[i][j] = true;
+  private static TreeNode deserializeTreeNode(Integer[]arr) {
 
-    for (int[]c: check) {
-      int x = i + c[0];
-      int y = j + c[1];
-      if (x >= 0 && x < grid.length && y >= 0 && y < grid[0].length) {
-        if (!visited[x][y] && grid[x][y] != 0) {
-          explore(grid, x, y, visited, check);
+    if (arr.length == 0 || arr[0] == null) {
+      return null;
+    }
+
+    Queue<TreeNode>q = new LinkedList<>();
+    int i = 0;
+    TreeNode head = new TreeNode(arr[i]);
+    q.add(head);
+    while (!q.isEmpty()) {
+      TreeNode node = q.remove();
+
+      if (node != null) {
+        if (++i < arr.length) {
+          Integer val = arr[i];
+          node.left = val != null? new TreeNode(val): null;
+          q.add(node.left);
+          if (++i < arr.length) {
+            val = arr[i];
+            node.right = val != null? new TreeNode(val): null;
+            q.add(node.right);
+          }
         }
       }
     }
+
+    return head;
+  }
+
+  private static List<Integer> serializeTreeNode(TreeNode node) {
+    List<Integer>lt = new ArrayList<Integer>();
+    Queue<TreeNode>q = new LinkedList<>();
+    q.add(node);
+    while (!q.isEmpty()) {
+      TreeNode n = q.remove();
+      lt.add(n != null? n.data: null);
+
+      if (n != null) {
+        q.add(n.left);
+        q.add(n.right);
+      }
+    }
+
+    return lt;
+  }
+
+  private static Node deserializeNode(Integer[]arr) {
+
+    if (arr.length == 0 || arr[0] == null) {
+      return null;
+    }
+
+    Queue<Node>q = new LinkedList<>();
+    int i = 0;
+    Node head = new Node(arr[i]);
+    q.add(head);
+    while (!q.isEmpty()) {
+      Node node = q.remove();
+
+      if (node != null) {
+        if (++i < arr.length) {
+          Integer val = arr[i];
+          node.left = val != null? new Node(val): null;
+          q.add(node.left);
+          if (++i < arr.length) {
+            val = arr[i];
+            node.right = val != null? new Node(val): null;
+            q.add(node.right);
+          }
+        }
+      }
+    }
+
+    return head;
+  }
+
+  private static ListNode deserializeNodeList(Integer[]arr) {
+    ListNode head = new ListNode (arr[0]);
+    ListNode node  = head;
+    for (int i = 1; i < arr.length; i++) {
+      node.next = new ListNode(arr[i]);
+      node = node.next;
+    }
+    return head;
+  }
+
+  private static List<Integer> serializeNodeList(ListNode n) {
+    List<Integer>lt = new ArrayList<>();
+    while (n != null) {
+      lt.add(n.val);
+      n = n.next;
+    }
+    return lt;
   }
 
   public static void main(String[]args) {
-    int[][]arr = {{1,2},{2,3},{3,4}};
-    char[][]carr = {{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};
+    Integer[]arr = {6,2,8,0,4,7,9,null,null,3,5};
 
-    System.out.println(numIslands(carr));
   }
-
-//  public static void main(String[]args) {
-//
-//    Node n0 = new Node();
-//    n0.data = 0;
-//    Node n1 = new Node();
-//    n1.data = 1;
-//    Node n2 = new Node();
-//    n2.data = 2;
-//    Node n3 = new Node();
-//    n3.data = 3;
-//    Node n4 = new Node();
-//    n4.data = 4;
-//    Node n5 = new Node();
-//    n5.data = 5;
-//    Node n6 = new Node();
-//    n6.data = 6;
-//    Node n7 = new Node();
-//    n7.data = 7;
-//    Node n8 = new Node();
-//    n8.data = 8;
-//    Node n9 = new Node();
-//    n9.data = 9;
-//    Node n10 = new Node();
-//    n10.data = 10;
-//    Node n20 = new Node();
-//    n20.data = 20;
-//    Node n15 = new Node();
-//    n15.data = 15;
-//    Node n50 = new Node();
-//    n50.data = 50;
-//
-//    n10.left = n5;
-//    n10.right = n15;
-//    n15.left = n6;
-//    n15.right = n20;
-//    System.out.println();
-////    while ( n1 != null) {
-////      System.out.print(n1.data + " ");
-////      n1 = n1.next;
-////    }
-////    for(int a: arr) {
-////      System.out.print(a + ",");
-////    }
-//  }
 }
