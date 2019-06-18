@@ -18,3 +18,4 @@ maven-repo/
 *.rej
 META-INF/
 .DS_Store
+out/
