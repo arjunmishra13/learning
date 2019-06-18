@@ -50,32 +50,24 @@ public class June9_2019 {
   }
 
   private static ListNode findkthlast(ListNode node, int k) {
-
-    int val = remove(node, k, 0);
-    if (last - val == k) {
-      node = node.next;
+    ListNode slow = node;
+    ListNode fast = node;
+    while (k-- > 0 && fast != null) {
+      fast = fast.next;
     }
-    return node;
-  }
 
-  static int last = 0;
-  static ListNode prev = null;
-  private static int remove(ListNode node, int k, int curr) {
-    if (node == null) {
-      last = curr;
-      return curr;
+    if (fast == null && k > 0) {
+      return null;
+    } else if (fast == null) {
+      return slow;
     }
-    int val = remove(node.next, k, curr  + 1);
 
-    if (last - val == k) {
-      if (prev != null) {
-        node.next = prev.next;
-      } else {
-        node.next = null;
-      }
+    while (fast != null) {
+      slow = slow.next;
+      fast = fast.next;
     }
-    prev = node;
-    return val - 1;
+
+    return slow;
   }
 
   private static List<Integer> serialize(ListNode n) {
@@ -89,6 +81,6 @@ public class June9_2019 {
   public static void main(String[]args) {
 
     int[]arr = {1,2,3,4,5,6,7,8,9,10};
-    System.out.println(serialize(findkthlast(deserialize(arr), 9)));
+    System.out.println(serialize(findkthlast(deserialize(arr), 3)));
   }
 }
