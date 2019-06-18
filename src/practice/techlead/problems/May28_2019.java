@@ -5,7 +5,7 @@ package practice.techlead.problems;
  * <p>This problem was asked by Google.</p>
  * <p>
  *   The area of a circle is defined as πr^2.
- *   Estimate π to 3 decimal places using a Monte Carlo method.
+ *   Estimate π to 3 decimal places using a aMonte Carlo method.
  *
  *   Hint: The basic equation of a circle is x2 + y2 = r2.
  * </p>
@@ -27,7 +27,7 @@ public class May28_2019 {
         inCircle++;
       }
     }
-    return String.format("%1.4f", 4*((double)inCircle/(double)iterations));
+    return String.format("%1.6f", 4*((double)inCircle/(double)iterations));
   }
 
   private static boolean isInCircle(double x, double y) {

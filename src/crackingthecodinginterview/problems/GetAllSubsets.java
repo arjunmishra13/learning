@@ -10,89 +10,30 @@ import java.util.*;
  *
  */
 public class GetAllSubsets {
-	
-	public static Set<Set<Integer>> getAllSubsetsRecursive(Set<Integer>set, Set<Set<Integer>>allSets, Set<Set<Integer>>prevSet, int currentMaxSize) {
-		if(allSets == null) {
-			allSets = new HashSet<Set<Integer>>();
-			Set<Integer>inner = new HashSet<Integer>();
-			allSets.add(inner);
-		}
-		
-		if(prevSet == null) {
-			prevSet = new HashSet<Set<Integer>>();
-		}
-		
-		if(currentMaxSize == set.size()) {
-			System.out.println(allSets.size());
-			return allSets;
-		}
-		
-		Set<Set<Integer>>current = new HashSet<Set<Integer>>();
-		if(prevSet.isEmpty()) {
-			for(int val:set) {
-				Set<Integer>temp = new HashSet<Integer>();
-				if(!temp.contains(val)) {
-					temp.add(val);
-					current.add(temp);
-				}
-			}
-		} else {
-			for(Set<Integer>inner: prevSet) {
-				for(int val:set) {
-					Set<Integer>temp = new HashSet<Integer>(inner);
-					if(!temp.contains(val)) {
-						temp.add(val);
-						current.add(temp);
-					}
-				}
-			}
-		}
-		
-		allSets.addAll(current);
-		currentMaxSize++;
-		return getAllSubsetsRecursive(set, allSets, current, currentMaxSize);
+
+	static List<List<Integer>>lts = new ArrayList<>();
+
+	private static List<List<Integer>> getAllSubsetsRecursive(int[]arr) {
+
+		build(arr, 0, new ArrayList<Integer>());
+		return lts;
 	}
 
-	public static String getAllSubsets(Set<Integer>set) {
-		Vector<Set<Set<Integer>>>arrays = new Vector<Set<Set<Integer>>>();
-		arrays.add(new HashSet<Set<Integer>>());
-		int numberOfSets = 1;
-		for(int i = 1; i <= set.size(); i++) {
-			Set<Set<Integer>>currentSet = new HashSet<Set<Integer>>();//copy previous set
-			if(arrays.get(i - 1).isEmpty()) {
-				for(int val: set) {
-					Set<Integer>temp = new HashSet<Integer>();
-					temp.add(val);
-					currentSet.add(temp);
-				}
-			} else {
-				for(Set<Integer>innerSet:arrays.get(i - 1)) {
-					for(int val: set) {
-						if(!innerSet.contains(val)) {
-							Set<Integer>temp = new HashSet<Integer>(innerSet);
-							temp.add(val);
-							currentSet.add(temp);
-						}
-					}
-				}
-			}
-			arrays.add(currentSet);
-			numberOfSets += currentSet.size();
+	private static void build(int[]arr, int i, List<Integer>lt) {
+		if (i > arr.length) {
+			return;
 		}
-		System.out.println(numberOfSets);
-		return arrays.toString();
+		lts.add(lt);
+		for (int j = i; j < arr.length; j++) {
+			List<Integer>list = new ArrayList<>(lt);
+			lt.add(arr[j]);
+			build(arr, j + 1, list);
+		}
 	}
+
 	public static void main(String[] args) {
 
-		Set<Integer>set = new HashSet<Integer>();
-		set.add(1);
-		set.add(2);
-		set.add(3);
-		set.add(4);
-//		set.add(5);
-
-		System.out.println(getAllSubsets(set));
-		System.out.println(getAllSubsetsRecursive(set, null, null, 0));
+		System.out.println(getAllSubsetsRecursive(new int[]{1,2,3}));
 	}
 
 }

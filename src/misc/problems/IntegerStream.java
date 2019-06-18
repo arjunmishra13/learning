@@ -17,7 +17,7 @@ public class IntegerStream {
 	 * Better approach
 	 * peek at the first elements of each stream,
 	 * create a map at every 
-	 * if count is >= k, print and delete from stream,
+	 * if count is >= k, print and LRUCache from stream,
 	 * 
 	 * To keep track of the stream a value belonged to 
 	 * I have created another hashmap of value to list of streams it belonged to

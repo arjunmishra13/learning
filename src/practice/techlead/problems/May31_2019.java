@@ -1,5 +1,8 @@
 package practice.techlead.problems;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <h>Daily Coding Problem: Problem #17 [Hard]</h>
  * <p>This problem was asked by Google.</p>
@@ -48,8 +51,48 @@ package practice.techlead.problems;
  */
 public class May31_2019 {
 
+  private static class Node {
+    String val;
+    List<Node> children;
+    int len;
+    Node(String val, int len) {
+      this.val = val;
+      children = new ArrayList<Node>();
+      this.len = len + val.length();
+    }
+  }
+
+  static String pathStr = null;
+  static String baseDelimiter = "\\n";
+  private static int getLongestPath(String path) {
+    pathStr = path;
+    Node node = buildtree("\\n\\t", 0);
+
+    return 0;
+  }
+
+
+  private static Node buildtree(String delimiter, int len) {
+    if (pathStr == null || pathStr.length() == 0) {
+      return null;
+    }
+
+    int index = pathStr.indexOf(delimiter);
+    if (index != -1) {
+      Node node = new Node(pathStr.substring(0, index), len);
+      pathStr = pathStr.substring(index + 1);
+
+
+      return node;
+    } else {
+      return new Node(pathStr, len);
+    }
+  }
+
+
   public static void main(String[]args) {
 
-    System.out.println();
+    String path = "dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext";
+    System.out.println(getLongestPath(path));
   }
 }

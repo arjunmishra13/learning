@@ -10,6 +10,10 @@ package practice.techlead.problems;
  */
 public class May29_2019 {
 
+  /**
+   * Read solution. Not sure
+   * @param args
+   */
   public static void main(String[]args) {
 
     System.out.println();
