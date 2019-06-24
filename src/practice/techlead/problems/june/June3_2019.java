@@ -1,4 +1,4 @@
-package practice.techlead.problems;
+package practice.techlead.problems.june;
 
 /**
  * <h>Daily Coding Problem: Problem #20 [Easy]</h>

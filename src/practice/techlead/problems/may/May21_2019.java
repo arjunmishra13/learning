@@ -1,4 +1,4 @@
-package practice.techlead.problems;
+package practice.techlead.problems.may;
 
 import java.util.HashSet;
 import java.util.LinkedList;

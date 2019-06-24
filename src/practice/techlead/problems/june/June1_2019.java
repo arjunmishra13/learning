@@ -1,6 +1,7 @@
-package practice.techlead.problems;
+package practice.techlead.problems.june;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -22,8 +23,38 @@ import java.util.List;
  */
 public class June1_2019 {
 
-  private static void getmaxink(int[]arr, int k) {
+  //Use queues to store elements that are lesser
+  public static int[] getmaxink(int[] nums, int k) {
+    LinkedList<Integer>q = new LinkedList<Integer>();
+    for (int i = 0; i < k; i++) {
+      while (!q.isEmpty() && nums[i] >= nums[q.peekLast()]) {
+        q.pollLast();
+      }
+      q.addLast(i);
+    }
+    int[]res = new int[nums.length - k + 1];
+    int j = 0;
+    for (int i = k; i < nums.length; i++) {
+      int val = q.peekFirst();
+      res[j++] = nums[val];
+      if (val < (i - k + 1)) {
+        q.pollFirst();
+      }
+      while (!q.isEmpty() && nums[i] > nums[q.peekLast()]) {
+        q.pollLast();
+      }
+      q.addLast(i);
+    }
 
+    if (j < res.length) {
+      res[j++] = nums[q.pollFirst()];
+    }
+
+    for (int r: res) {
+      System.out.print(r + ",");
+    }
+    System.out.println();
+    return res;
   }
 
   private static void getmaxinknaive(int[]arr, int k) {
@@ -40,9 +71,11 @@ public class June1_2019 {
 
   public static void main(String[]args) {
 
-    int[]arr = {10, 5, 2, 7, 8, 7};
+    int[]arr = {1,3,-1,-3,5,3,6,7,1,2,3};
     int k = 3;
     getmaxinknaive(arr, k);
+    System.out.println();
+    getmaxink(arr, k);
     System.out.println();
   }
 }

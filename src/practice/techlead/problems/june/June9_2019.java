@@ -1,4 +1,4 @@
-package practice.techlead.problems;
+package practice.techlead.problems.june;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

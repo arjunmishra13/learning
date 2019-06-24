@@ -1,4 +1,4 @@
-package practice.techlead.problems;
+package practice.techlead.problems.may;
 
 /**
  * <h>Daily Coding Problem: Problem #10 [Medium]</h>

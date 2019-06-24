@@ -1,4 +1,4 @@
-package practice.techlead.problems;
+package practice.techlead.problems.june;
 
 /**
  * <h>Daily Coding Problem: Problem #21 [Easy]</h>
@@ -10,7 +10,7 @@ package practice.techlead.problems;
  *    For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
  * </p>
  */
-public class June5_2019 {
+public class June7_2019 {
 
   private static int minrooms(int[][]arr) {
 

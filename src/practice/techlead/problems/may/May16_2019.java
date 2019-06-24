@@ -1,4 +1,4 @@
-package practice.techlead.problems;
+package practice.techlead.problems.may;
 
 /**
  * May 16, 2019

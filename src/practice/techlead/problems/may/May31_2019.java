@@ -1,7 +1,10 @@
-package practice.techlead.problems;
+package practice.techlead.problems.may;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <h>Daily Coding Problem: Problem #17 [Hard]</h>
@@ -51,48 +54,40 @@ import java.util.List;
  */
 public class May31_2019 {
 
-  private static class Node {
-    String val;
-    List<Node> children;
-    int len;
-    Node(String val, int len) {
-      this.val = val;
-      children = new ArrayList<Node>();
-      this.len = len + val.length();
+  private class Dir {
+    String name;
+    boolean isFile;
+    Dir(String name) {
+      this.name = name;
     }
   }
 
-  static String pathStr = null;
-  static String baseDelimiter = "\\n";
-  private static int getLongestPath(String path) {
-    pathStr = path;
-    Node node = buildtree("\\n\\t", 0);
+  private static Map<Dir, Dir>dirs = new HashMap<Dir, Dir>();
 
+  private static int getLongestPath(String str) {
+
+    buildDir(str);
     return 0;
   }
 
+  private static void buildDir(String str) {
+    String[]sarr = str.split("\n");
+    for (String f: sarr) {
+      int i = 0;
+      String st = f;
+      while (f.contains("\\t")) {
+        f = f.substring(1);
+        i++;
+      }
 
-  private static Node buildtree(String delimiter, int len) {
-    if (pathStr == null || pathStr.length() == 0) {
-      return null;
-    }
-
-    int index = pathStr.indexOf(delimiter);
-    if (index != -1) {
-      Node node = new Node(pathStr.substring(0, index), len);
-      pathStr = pathStr.substring(index + 1);
-
-
-      return node;
-    } else {
-      return new Node(pathStr, len);
+//      Dir d = new Dir()
     }
   }
 
-
   public static void main(String[]args) {
 
-    String path = "dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext";
+//    String path = "dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext";
+    String path = "dir\\n\\tsubdir1\\n\\t\\tfile1.ext\\n\\t\\tsubsubdir1\\n\\tsubdir2\\n\\t\\tsubsubdir2\\n\\t\\t\\tfile2.ext";
     System.out.println(getLongestPath(path));
   }
 }

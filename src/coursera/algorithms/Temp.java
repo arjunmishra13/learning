@@ -2,34 +2,33 @@ package coursera.algorithms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
-import java.util.Stack;
 
 public class Temp {
 
 
   static class TreeNode {
-    int data;
+    int val;
     TreeNode left;
     TreeNode right;
     TreeNode next;
     TreeNode bottom;
     public TreeNode(){};
-    public TreeNode(int data) {
-      this.data = data;
+    public TreeNode(int val) {
+      this.val = val;
     }
 
     @Override
     public String toString() {
-      return Integer.toString(data);
+      return Integer.toString(val);
     }
 
     public static void preprintelements(TreeNode n) {
@@ -37,26 +36,26 @@ public class Temp {
         return;
       }
 
-      System.out.print(n.data + ",");
+      System.out.print(n.val + ",");
       preprintelements(n.left);
       preprintelements(n.right);
     }
   }
 
   static class Node {
-    int data;
+    int val;
     Node left;
     Node right;
     Node next;
     Node bottom;
     public Node(){};
-    public Node(int data) {
-      this.data = data;
+    public Node(int val) {
+      this.val = val;
     }
 
     @Override
     public String toString() {
-      return Integer.toString(data);
+      return Integer.toString(val);
     }
 
     public static void preprintelements(Node n) {
@@ -64,7 +63,7 @@ public class Temp {
         return;
       }
 
-      System.out.print(n.data + ",");
+      System.out.print(n.val + ",");
       preprintelements(n.left);
       preprintelements(n.right);
     }
@@ -119,7 +118,7 @@ public class Temp {
     q.add(node);
     while (!q.isEmpty()) {
       TreeNode n = q.remove();
-      lt.add(n != null? n.data: null);
+      lt.add(n != null? n.val: null);
 
       if (n != null) {
         q.add(n.left);
@@ -160,7 +159,7 @@ public class Temp {
     return head;
   }
 
-  private static ListNode deserializeNodeList(Integer[]arr) {
+  private static ListNode deserializeNodeList(int[]arr) {
     ListNode head = new ListNode (arr[0]);
     ListNode node  = head;
     for (int i = 1; i < arr.length; i++) {
@@ -179,8 +178,77 @@ public class Temp {
     return lt;
   }
 
-  public static void main(String[]args) {
-    Integer[]arr = {6,2,8,0,4,7,9,null,null,3,5};
+  private static List<String> deserializelist(String[]arr) {
+    List<String>lts = new ArrayList<String>();
+    for (String s: arr) {
+      lts.add(s);
+    }
+    return lts;
+  }
 
+  public static class Solution {
+
+    int[][]matrix = null;
+    Solution(int[][]matrix) {
+      this.matrix = matrix;
+    }
+
+    private boolean knows(int i, int j) {
+      return matrix[i][j] == 1;
+    }
+
+    int celebrity = -1;
+    boolean isConnected = false;
+    public int findCelebrity(int n) {
+
+      boolean[]visited = new boolean[n];
+      for (int i = 0; i < n; i++) {
+        if (hasCycles(n, i, visited)) {
+          return -1;
+        }
+      }
+
+      return celebrity;
+    }
+
+    private boolean hasCycles(int n, int i, boolean[]visited) {
+      if (visited[i]) {
+        return true;
+      }
+
+      visited[i] = true;
+
+      isConnected = false;
+
+      for (int j = 0; j < n; j++) {
+        if (j != i && knows(i,j)) {
+          isConnected = true;
+          if (hasCycles(n, j, visited)) {
+            return true;
+          }
+        }
+      }
+
+
+      visited[i] = false;
+
+      if (isConnected && celebrity == -1) {
+        celebrity = i;
+      }
+      return false;
+    }
+  }
+
+  public static void main(String[]args) {
+
+    int[]arr = {1,2,4,5,5,1,2,4};
+    int[]brr = {5,6,4};
+    int[][]arr2 = {{1,1,0,1},{0,1,0,0},{1,1,1,1},{1,1,0,1}};
+    Solution sol = new Solution(arr2);
+    System.out.println(sol.findCelebrity(4));
+
+    String s = "a*b";
+    String m = "b";
+    System.out.println(m.matches(s));
   }
 }
