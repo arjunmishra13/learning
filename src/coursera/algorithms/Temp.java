@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -186,69 +187,12 @@ public class Temp {
     return lts;
   }
 
-  public static class Solution {
-
-    int[][]matrix = null;
-    Solution(int[][]matrix) {
-      this.matrix = matrix;
-    }
-
-    private boolean knows(int i, int j) {
-      return matrix[i][j] == 1;
-    }
-
-    int celebrity = -1;
-    boolean isConnected = false;
-    public int findCelebrity(int n) {
-
-      boolean[]visited = new boolean[n];
-      for (int i = 0; i < n; i++) {
-        if (hasCycles(n, i, visited)) {
-          return -1;
-        }
-      }
-
-      return celebrity;
-    }
-
-    private boolean hasCycles(int n, int i, boolean[]visited) {
-      if (visited[i]) {
-        return true;
-      }
-
-      visited[i] = true;
-
-      isConnected = false;
-
-      for (int j = 0; j < n; j++) {
-        if (j != i && knows(i,j)) {
-          isConnected = true;
-          if (hasCycles(n, j, visited)) {
-            return true;
-          }
-        }
-      }
-
-
-      visited[i] = false;
-
-      if (isConnected && celebrity == -1) {
-        celebrity = i;
-      }
-      return false;
-    }
-  }
-
   public static void main(String[]args) {
+    int[]arr = {};
+    int[]brr = {};
+    Arrays.hashCode(arr);
+    System.out.println();
 
-    int[]arr = {1,2,4,5,5,1,2,4};
-    int[]brr = {5,6,4};
-    int[][]arr2 = {{1,1,0,1},{0,1,0,0},{1,1,1,1},{1,1,0,1}};
-    Solution sol = new Solution(arr2);
-    System.out.println(sol.findCelebrity(4));
-
-    String s = "a*b";
-    String m = "b";
-    System.out.println(m.matches(s));
+    Arrays.equals(arr, brr);
   }
 }

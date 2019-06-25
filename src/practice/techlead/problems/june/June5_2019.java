@@ -1,8 +1,10 @@
 package practice.techlead.problems.june;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -22,23 +24,42 @@ import java.util.Set;
  */
 public class June5_2019 {
 
-  private static List<String> splitsentance(String str, String[]sarr) {
-    Set<String>dict = new HashSet<>();
-    for (String s: sarr) {
-      dict.add(s);
+  private static List<String> splitsentance(String s, String[]sarr) {
+    Set<String>words = new HashSet<String>();
+    for (String w: sarr) {
+      words.add(w);
     }
 
-    //DP solution on O(n-square) time
-    /**
-     * Use T(i) = T(i - 1)&&match
-     */
-    boolean[]dp = new boolean[str.length() + 1];
-    return null;
+    List<String>sent = new ArrayList<>();
+    boolean[]dp = new boolean[s.length() + 1];
+    dp[0] = true;
+    for (int i = 1; i <= s.length(); i++) {
+      for (int j = 0; j < i; j++) {
+        if (dp[j] && words.contains(s.substring(j,i))) {
+          dp[i] = true;
+        }
+      }
+    }
+
+    if (!dp[s.length()]) {
+      return sent;
+    } else {
+      int i = 0;
+      int j = i;
+      while (i++ < s.length()) {
+        if (dp[i]) {
+          sent.add(s.substring(j,i));
+          j = i;
+        }
+      }
+
+      return sent;
+    }
   }
 
   public static void main(String[]args) {
 
-    String[]sarr = {"bed", "bath", "bedbath", "and", "beyond"};
-    System.out.println(splitsentance("bedbathandbeyond", sarr));
+    String[]sarr = {"leet", "code"};
+    System.out.println(splitsentance("leetcode", sarr));
   }
 }

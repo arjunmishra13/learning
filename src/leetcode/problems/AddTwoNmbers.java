@@ -2,6 +2,13 @@ package leetcode.problems;
 
 public class AddTwoNmbers {
 
+		private static class ListNode {
+			int val;
+			ListNode next;
+			ListNode(int x) { val = x; }
+			public String toString() {return Integer.toString(val);}
+		}
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
         if(l1 == null && l2 == null) {
