@@ -187,12 +187,80 @@ public class Temp {
     return lts;
   }
 
-  public static void main(String[]args) {
-    int[]arr = {};
-    int[]brr = {};
-    Arrays.hashCode(arr);
-    System.out.println();
+  private static List<List<Integer>> deserialize2darray(int[][]arr) {
+    List<List<Integer>>lts = new ArrayList<List<Integer>>();
+    for (int i = 0; i < arr.length; i++) {
+      List<Integer>lt = new ArrayList<Integer>();
+      lts.add(lt);
+      for (int j = 0; j < arr[0].length; j++) {
+        lt.add(arr[i][j]);
+      }
+    }
+    return lts;
+  }
 
-    Arrays.equals(arr, brr);
+  public static int divide(int dividend, int divisor) {
+    int quo = 0;
+    boolean pos = dividend > 0? true:false;
+    if (divisor == 1) {
+      return dividend;
+    } else if (divisor == -1) {
+      if (dividend == Integer.MAX_VALUE) {
+        return Integer.MIN_VALUE + 1;
+      } else if (dividend == Integer.MIN_VALUE) {
+        return Integer.MAX_VALUE;
+      }
+      return ~dividend + 1;
+    }
+    boolean neg = false;
+    if (dividend == Integer.MAX_VALUE) {
+      neg = divisor > 0?true:false;
+    } else if (dividend == Integer.MIN_VALUE) {
+      neg = divisor > 0?false:true;
+    } else {
+      neg = pos?(dividend - divisor > dividend?false:true):(dividend - divisor < dividend?false:true);
+    }
+    while ((pos && dividend >= 0) || (!pos && dividend <= 0)) {
+      if (neg) {
+        dividend -= divisor;
+        quo++;
+      } else {
+        dividend += divisor;
+        quo--;
+      }
+    }
+
+    return quo > 0? --quo:++quo;
+  }
+
+  public static int[] intersect(int[] nums1, int[] nums2) {
+    Arrays.sort(nums1);
+    Arrays.sort(nums2);
+    List<Integer>lt = new ArrayList<Integer>();
+    int i = 0;
+    int j = 0;
+    while (i < nums1.length && j < nums2.length) {
+      int v1 = nums1[i];
+      int v2 = nums2[j];
+      if (v1 == v2) {
+        i++;
+        j++;
+        lt.add(v1);
+      } else if (v1 < v2) {
+        i++;
+      } else {
+        j++;
+      }
+    }
+
+    int[]arr = new int[lt.size()];
+    for (int k = 0; k < lt.size(); k++) {
+      arr[k] = lt.get(k);
+    }
+    return arr;
+  }
+
+  public static void main(String[]args) {
+    System.out.println(intersect(new int[]{1,2,2,1}, new int[]{2,2}));
   }
 }

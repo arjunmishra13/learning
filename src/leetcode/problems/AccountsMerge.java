@@ -8,53 +8,82 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class AccountsMerge {
+  
   public List<List<String>> accountsMerge(List<List<String>> accounts) {
-    Map<Integer, Set<String>>map = new HashMap<Integer, Set<String>>();
-    Map<String, Integer>index = new HashMap<String, Integer>();
-    int mini = Integer.MAX_VALUE;
+    DisjointSet disj = new DisjointSet(accounts.size());
+    Map<String, Integer>map = new TreeMap<String, Integer>();
     for (int i = 0; i < accounts.size(); i++) {
-      int match = -1;
-      map.put(i, new HashSet<String>());
       for (int j = 1; j < accounts.get(i).size(); j++) {
         String email = accounts.get(i).get(j);
-        if (!index.containsKey(email)) {
-          index.put(email, i);
+        if (!map.containsKey(email)) {
+          map.put(email, i);
         } else {
-          match = index.get(email);
+          disj.merge(map.get(email), i);
         }
-        map.get(i).add(email);
+      }
+    }
+
+    Map<Integer, List<String>>resm = new HashMap<Integer, List<String>>();
+    for (String email: map.keySet()) {
+      int index = disj.find(map.get(email));
+      if (!resm.containsKey(index)) {
+        resm.put(index, new ArrayList<String>());
+      }
+      if (resm.get(index).isEmpty()) {
+        resm.get(index).add(accounts.get(index).get(0));
       }
 
-      if (match != -1) {
-        for (String s: map.get(i)) {
-          index.put(s, match);
-          map.get(match).add(s);
-        }
-        map.remove(i);
-        mini = Math.min(mini, match);
+      resm.get(index).add(email);
+    }
+
+    return new ArrayList(resm.values());
+  }
+
+  private void update(Map<String, Integer>map, List<String>lt, int index) {
+    for (int i = 1; i < lt.size(); i++) {
+      map.put(lt.get(i), index);
+    }
+  }
+
+  private class DisjointSet {
+    int[]parent;
+    int[]rank;
+    DisjointSet(int n) {
+      parent = new int[n];
+      rank = new int[n];
+
+      for (int i = 0; i < n; i++) {
+        parent[i] = i;
+      }
+    }
+
+    int find(int i) {
+      if (parent[i] == i) {
+        return i;
+      }
+      parent[i] = find(parent[i]);
+      return parent[i];
+    }
+
+    void merge(int i, int j) {
+      int fi = find(i);
+      int fj = find(j);
+
+      int ri = rank[fi];
+      int rj = rank[fj];
+
+      if (ri > rj) {
+        parent[fj] = fi;
+      } else if (ri < rj) {
+        parent[fi] = fj;
       } else {
-        mini = Math.min(mini, i);
+        parent[fj] = fi;
+        rank[fj]++;
       }
     }
-
-    List<List<String>>lts = new ArrayList<List<String>>();
-    int count = 0;
-    while (count < map.keySet().size()) {
-      if (map.containsKey(mini)) {
-        count++;
-        lts.add(new ArrayList<String>());
-        int i = lts.size() - 1;
-        lts.get(i).add(accounts.get(mini).get(0));
-        List<String>emails = new ArrayList<String>(map.get(mini));
-        Collections.sort(emails);
-        lts.get(i).addAll(emails);
-      }
-      mini++;
-    }
-
-    return lts;
   }
 
   public static void main(String[] args) {
