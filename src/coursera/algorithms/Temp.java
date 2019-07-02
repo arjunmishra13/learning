@@ -233,34 +233,33 @@ public class Temp {
     return quo > 0? --quo:++quo;
   }
 
-  public static int[] intersect(int[] nums1, int[] nums2) {
-    Arrays.sort(nums1);
-    Arrays.sort(nums2);
-    List<Integer>lt = new ArrayList<Integer>();
+  public static boolean validPalindrome(String s) {
+
+    return validp(s, 0);
+  }
+
+  private static boolean validp(String s, int count) {
+    if (count > 1) {
+      return false;
+    }
+
     int i = 0;
-    int j = 0;
-    while (i < nums1.length && j < nums2.length) {
-      int v1 = nums1[i];
-      int v2 = nums2[j];
-      if (v1 == v2) {
-        i++;
-        j++;
-        lt.add(v1);
-      } else if (v1 < v2) {
-        i++;
+    int j = s.length() - 1;
+    while (i < j) {
+      if (s.charAt(i) != s.charAt(j)) {
+        String temp1 = s.substring(i + 1, j + 1);
+        String temp2 = s.substring(i, j);
+        return validp(temp1, count + 1) || validp(temp2, count + 1);
       } else {
-        j++;
+        i++;
+        j--;
       }
     }
 
-    int[]arr = new int[lt.size()];
-    for (int k = 0; k < lt.size(); k++) {
-      arr[k] = lt.get(k);
-    }
-    return arr;
+    return true;
   }
 
   public static void main(String[]args) {
-    System.out.println(intersect(new int[]{1,2,2,1}, new int[]{2,2}));
+    System.out.println(validPalindrome("abcda"));
   }
 }

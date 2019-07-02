@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class AccountsMerge {
-  
+
   public List<List<String>> accountsMerge(List<List<String>> accounts) {
     DisjointSet disj = new DisjointSet(accounts.size());
     Map<String, Integer>map = new TreeMap<String, Integer>();
