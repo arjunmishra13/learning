@@ -38,7 +38,7 @@ public class June10_2019 {
 
   public static void main(String[]args) {
 
-    String str = "([])[]({})";
-    System.out.println(isbalanced(str));
+    System.out.println(isbalanced("([])[]({})"));
+    System.out.println(isbalanced("([)]"));
   }
 }
