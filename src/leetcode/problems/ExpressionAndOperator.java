@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ExpressionAndOperator {
 
-  List<String> result = new ArrayList<String>();
+  List<String>result = new ArrayList<String>();
   public List<String> addOperators(String num, int target) {
 
     dfs(num, target, 0l, 0l, 0, "");
@@ -30,12 +30,15 @@ public class ExpressionAndOperator {
         dfs(num, target, val - x, -x, j + 1, str + '-' + x);
         dfs(num, target, val - prev + prev*x, prev*x, j + 1, str + '*' + x);
       }
+
+      if (x == 0) {
+        break;
+      }
     }
   }
 
-
   public static void main(String[] args) {
     ExpressionAndOperator exp = new ExpressionAndOperator();
-    System.out.println(exp.addOperators("105",5));
+    System.out.println(exp.addOperators("1231",25));
   }
 }
